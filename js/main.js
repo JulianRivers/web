@@ -72,9 +72,10 @@ function ejecutarApi(){
 
         const mostrarData = (data) => {
             console.log(data.length);
-            var rta="";
-            for(let i=0;i<data.length;i++){
-                if (data[i] != undefined){
+            let rta="";
+            let gatos = Object.values(data);
+            for(let i=0;i<gatos.length;i++){
+                if (gatos[i] != undefined && gatos[i].image){
                     rta += "<img src='" + data[i].image.url 
                         + "' heigth='300' width='300'> <br>";
                 }
